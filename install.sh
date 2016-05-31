@@ -1,5 +1,4 @@
 #! /bin/bash
-cd vimconf
 Path=`pwd` 
 cd ~
 rm -rf .vim
