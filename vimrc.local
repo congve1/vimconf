@@ -1,0 +1,28 @@
+set nocursorline "don't highlight current line
+
+" keyboard shortcuts
+
+inoremap jj <ESC>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" highlight search
+" set hlsearch
+" nmap <lear>hl :let @/= ""<CR>
+"
+" gui settings
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
+endif
+
+function! s:RemoveConflictAlignMaps()
+  if exists("g:loaded_AlignMapsPlugin")
+    AlignMapsClean
+  endif
+endfunction
+command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictAlignMaps()
+silent! autocmd VimEnter * RemoveConflictingAlignMaps
