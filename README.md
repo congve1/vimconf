@@ -2,7 +2,8 @@
 
 ## Install
 
-* use >git clone https://github.com/congve1/vimconf.git
+* use 
+  >git clone https://github.com/congve1/vimconf.git
 * cd vimconf
 * run ./install.sh
 
